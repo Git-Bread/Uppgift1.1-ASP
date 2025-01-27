@@ -16,7 +16,7 @@
 <div class="mt-2">
     <h2 class="subtitle mb-1">Information</h2>
     <div class="container">
-        <p>Current Date and Time: @Date.ToString("d")</p>
+        <p>Current Date and Time: @Date.ToString("d"), @Date.ToString("t")</p>
         <p>@(isFriday ? "Today is Friday" : "Today is not Friday")</p>
     </div>
 </div>
@@ -38,7 +38,7 @@
         new Course { Code = "DT209G", Name = "Webbutveckling för WordPress" },
     };
 
-    private DateTime Date = DateTime.Today;
+    private DateTime Date = DateTime.Now;
     private bool isFriday;
 
     protected override void OnInitialized()
