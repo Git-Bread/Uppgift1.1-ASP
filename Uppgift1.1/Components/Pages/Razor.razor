@@ -16,7 +16,7 @@
 <div class="mt-2">
     <h2 class="subtitle mb-1">Information</h2>
     <div class="container">
-        <p>Current Date and Time: @currentDateTime</p>
+        <p>Current Date and Time: @Date.ToString("d")</p>
         <p>@(isFriday ? "Today is Friday" : "Today is not Friday")</p>
     </div>
 </div>
@@ -38,19 +38,14 @@
         new Course { Code = "DT209G", Name = "Webbutveckling för WordPress" },
     };
 
-    private string currentDateTime = "DateTime";
+    private DateTime Date = DateTime.Today;
     private bool isFriday;
 
     protected override void OnInitialized()
     {
-        currentDateTime = GetCurrentDateTime();
         isFriday = CheckIfFriday();
     }
 
-    private string GetCurrentDateTime()
-    {
-        return DateTime.Now.ToString("F"); // Full date/time pattern (long time)
-    }
 
     private bool CheckIfFriday()
     {
@@ -59,7 +54,7 @@
 
     private class Course
     {
-        public string Code { get; set; }
-        public string  Name { get; set; }
+        public string Code { get; set; } = "";
+        public string Name { get; set; } = "";
     }
 }

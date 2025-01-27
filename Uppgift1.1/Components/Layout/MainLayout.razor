@@ -3,7 +3,7 @@
 <div class="wrapper is-flex is-flex-direction-column">
     <header class="level p-4 border-bottom border-3">
         <img src="images/logo.png" alt="Logo" />
-        <h2 role="status" class="is-size-4 mr-4 mb-auto pt-4">Todays Date: @Date.ToString("D")</h2>
+        <h2 role="status" class="is-size-4 mr-4 mb-auto pt-4">Todays Date: @Date.ToString("d")</h2>
     </header>
     <div class="columns is-8 container is-flex-grow-1">
         <aside class="column is-one-quarter">
@@ -19,10 +19,5 @@
 </div>
 
 @code {
-    private DateTime Date;
-
-    protected override void OnInitialized()
-    {
-        Date = DateTime.Today;
-    }
+    private DateTime Date = DateTime.Today;
 }
